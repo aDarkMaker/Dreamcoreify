@@ -221,46 +221,58 @@ const PRESET_ETHEREAL: DreamcoreifyOptions = {
 const PRESET_VAPORWAVE: DreamcoreifyOptions = {
   adjustments: {
     options: {
-      brightness: 0.12,
-      contrast: -0.1,
-      saturation: 0.5,
-      temperature: 0.25,
+      brightness: 0.06,
+      contrast: -0.12,
+      saturation: -0.35,
+      temperature: -0.15,
+      highlightsBrightness: 0.12,
+      shadowsBrightness: -0.06,
+    },
+  },
+  edgeGlow: {
+    options: {
+      radius: 4,
+      threshold: 20,
+      exposureBoost: 0.18,
+      shadowTint: "#7a2040",
+      highlightTint: "#6040c8",
+      tintStrength: 0.14,
     },
   },
   colorGrading: {
     options: {
-      shadowsTint: '#00ff60',
-      midtonesTint: '#ff2090',
-      highlightsTint: '#ffaa20',
-      strength: 0.7,
+      shadowsTint: "#301028",
+      midtonesTint: "#c060a0",
+      highlightsTint: "#f0c8e8",
+      strength: 0.55,
     },
   },
   overexposure: {
-    options: { intensity: 0.35, threshold: 175 },
+    options: { intensity: 0.28, threshold: 185 },
   },
   bloom: {
-    options: { intensity: 0.35, radius: 10, threshold: 180 },
+    options: { intensity: 0.45, radius: 22, threshold: 170 },
   },
   haze: {
     options: {
-      intensity: 0.12,
-      color: '#ff90c0',
-      distribution: 'gradient-top',
+      intensity: 0.18,
+      color: "#e8a8d0",
+      distribution: "gradient-top",
     },
   },
   blur: {
-    options: { type: 'gaussian', radius: 0.3 },
+    options: { type: "gaussian", radius: 0.5 },
   },
   chromaticAberration: {
-    options: { offset: 5, angle: 20, radial: true },
+    options: { offset: 4, angle: 20, radial: true },
   },
   grain: {
-    options: { intensity: 0.25, size: 1, colored: false },
+    options: { intensity: 0.42, size: 1, colored: true },
   },
   vignette: {
     options: {
-      intensity: 0.3,
-      color: '#1a0a20',
+      intensity: 0.35,
+      color: "#1a0828",
       roundness: 0.3,
       feather: 0.65,
     },

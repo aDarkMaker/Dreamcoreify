@@ -13,11 +13,13 @@ import { applyBlur } from "../filters/blur";
 import { applyChromaticAberration } from "../filters/chromatic-aberration";
 import { applyGrain } from "../filters/grain";
 import { applyVignette } from "../filters/vignette";
+import { applyEdgeGlow } from "../filters/edge-glow";
 import { cloneImageData } from "../utils/image-io";
 import { lerp, clampByte } from "../utils/math";
 
 const DEFAULT_FILTER_ORDER: FilterName[] = [
   "adjustments",
+  "edgeGlow",
   "colorGrading",
   "overexposure",
   "bloom",
@@ -37,6 +39,7 @@ type FilterApplyFn = (
 
 const FILTER_MAP: Record<FilterName, FilterApplyFn> = {
   adjustments: applyAdjustments as FilterApplyFn,
+  edgeGlow: applyEdgeGlow as FilterApplyFn,
   colorGrading: applyColorGrading as FilterApplyFn,
   overexposure: applyOverexposure as FilterApplyFn,
   bloom: applyBloom as FilterApplyFn,
@@ -62,6 +65,7 @@ function mergeOptions(
 
   const filterNames: FilterName[] = [
     "adjustments",
+    "edgeGlow",
     "colorGrading",
     "overexposure",
     "bloom",

@@ -127,6 +127,7 @@ export type {
   ChromaticAberrationOptions,
   BlurOptions,
   AdjustmentsOptions,
+  EdgeGlowOptions,
 } from "./types";
 
 export { applyAdjustments } from "./filters/adjustments";
@@ -138,3 +139,4 @@ export { applyBlur } from "./filters/blur";
 export { applyChromaticAberration } from "./filters/chromatic-aberration";
 export { applyGrain } from "./filters/grain";
 export { applyVignette } from "./filters/vignette";
+export { applyEdgeGlow } from "./filters/edge-glow";

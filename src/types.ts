@@ -66,6 +66,17 @@ export interface AdjustmentsOptions {
   contrast?: number;
   saturation?: number;
   temperature?: number;
+  highlightsBrightness?: number;
+  shadowsBrightness?: number;
+}
+
+export interface EdgeGlowOptions {
+  radius?: number;
+  threshold?: number;
+  exposureBoost?: number;
+  shadowTint?: string;
+  highlightTint?: string;
+  tintStrength?: number;
 }
 
 export interface FilterLayer<T = Record<string, unknown>> {
@@ -84,6 +95,7 @@ export interface DreamcoreifyOptions {
   chromaticAberration?: FilterLayer<ChromaticAberrationOptions>;
   blur?: FilterLayer<BlurOptions>;
   adjustments?: FilterLayer<AdjustmentsOptions>;
+  edgeGlow?: FilterLayer<EdgeGlowOptions>;
 
   globalIntensity?: number;
 
@@ -103,7 +115,8 @@ export type FilterName =
   | "overexposure"
   | "chromaticAberration"
   | "blur"
-  | "adjustments";
+  | "adjustments"
+  | "edgeGlow";
 
 export type PresetName =
   | "classic"
